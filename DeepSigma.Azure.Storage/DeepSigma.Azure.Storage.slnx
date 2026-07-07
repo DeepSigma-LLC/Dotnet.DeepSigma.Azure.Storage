@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../DeepSigma.Azure.Storage.Test/DeepSigma.Azure.Storage.Test.csproj" />
+  <Project Path="DeepSigma.Azure.Storage.csproj" />
+</Solution>
