@@ -1,9 +1,10 @@
+using Azure.Core;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
-namespace DeepSigma.Azure.BlobStorage;
+namespace DeepSigma.Azure.Storage;
 
 /// <summary>
 /// Provides methods to interact with Azure Blob Storage:
@@ -24,6 +25,15 @@ public class BlobStorageApi
     public BlobStorageApi(string connectionString, string blobContainerName, ILogger<BlobStorageApi>? logger = null)
     {
         BlobServiceClient serviceClient = new(connectionString);
+        _containerClient = serviceClient.GetBlobContainerClient(blobContainerName);
+        _logger = logger ?? NullLogger<BlobStorageApi>.Instance;
+    }
+
+    /// <inheritdoc cref="BlobStorageApi(string, string, ILogger{BlobStorageApi}?)"/>
+    public BlobStorageApi(string connectionString, string blobContainerName, TokenCredential tokenCredential, ILogger<BlobStorageApi>? logger = null)
+    {
+        Uri serviceUri = new(connectionString);
+        BlobServiceClient serviceClient = new(serviceUri, tokenCredential);
         _containerClient = serviceClient.GetBlobContainerClient(blobContainerName);
         _logger = logger ?? NullLogger<BlobStorageApi>.Instance;
     }

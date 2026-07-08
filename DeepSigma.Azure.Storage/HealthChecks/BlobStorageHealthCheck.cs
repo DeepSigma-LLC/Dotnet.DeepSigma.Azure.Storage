@@ -2,7 +2,7 @@ using Azure;
 using Azure.Storage.Blobs;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace DeepSigma.Azure.BlobStorage.HealthChecks;
+namespace DeepSigma.Azure.Storage.HealthChecks;
 
 /// <summary>
 /// Health check that calls <see cref="BlobContainerClient.ExistsAsync"/> against the configured

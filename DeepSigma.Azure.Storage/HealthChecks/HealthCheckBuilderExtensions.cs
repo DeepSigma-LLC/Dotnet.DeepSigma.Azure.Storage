@@ -1,4 +1,4 @@
-using DeepSigma.Azure.BlobStorage.HealthChecks;
+using DeepSigma.Azure.Storage.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 // ReSharper disable once CheckNamespace -- intentional, so the extension lights up wherever DI is in scope.

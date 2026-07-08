@@ -1,4 +1,4 @@
-using DeepSigma.Azure.BlobStorage;
+using DeepSigma.Azure.Storage;
 
 // ReSharper disable once CheckNamespace -- intentional, so the extension lights up wherever DI is in scope.
 namespace Microsoft.Extensions.DependencyInjection;
