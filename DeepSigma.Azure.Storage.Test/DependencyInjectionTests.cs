@@ -1,7 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
+using DeepSigma.Azure.Storage;
 
-namespace DeepSigma.Azure.BlobStorage.Tests;
+namespace DeepSigma.Azure.Storage.Tests;
 
 /// <summary>
 /// DI smoke tests. BlobServiceClient/BlobContainerClient construction is lazy — it does not
